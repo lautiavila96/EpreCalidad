@@ -20,6 +20,8 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 import { AcordeonComponent } from './sidenav/acordeon/acordeon.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 
 
 
@@ -30,6 +32,7 @@ import { AcordeonComponent } from './sidenav/acordeon/acordeon.component';
     ToolbarComponent,
     SidenavComponent,
     AcordeonComponent,
+    SchedulerComponent,
     
   ],
   imports: [
@@ -42,10 +45,11 @@ import { AcordeonComponent } from './sidenav/acordeon/acordeon.component';
     ButtonModule,
     SidebarModule,
     MatSidenavModule,
-    AccordionModule
+    AccordionModule,
+    ScheduleModule, RecurrenceEditorModule
     
   ],
-  providers: [],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
